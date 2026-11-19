@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+.comments-swiper {
+  padding-bottom: 45px !important;
+}
+
+.comments-swiper .swiper-pagination {
+  bottom: 0 !important;
+  position: absolute;
+}
+
+.comments-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
+  background: #9ca3af;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.comments-swiper .swiper-pagination-bullet-active {
+  width: 25px;
+  background: #2563eb;
+}
