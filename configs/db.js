@@ -2,14 +2,25 @@ import mongoose from "mongoose";
 
 const connectDb = async () => {
   try {
-    if (mongoose.connections[0].readyState) {
+    if (mongoose.connection.readyState === 1) {
       return true;
-    } else {
-      await mongoose.connect(process.env.MONGO_URL);
     }
+
+    console.log(
+      "MONGO_URL:",
+      process.env.MONGO_URL?.startsWith("mongodb://")
+        ? "Standard URI"
+        : "SRV URI or Invalid",
+    );
+
+    await mongoose.connect(process.env.MONGO_URL);
+
+    console.log("MongoDB connected successfully");
+    return true;
   } catch (err) {
-    console.log(err.message);
-    
+    console.error("MongoDB connection error:", err.message);
+    throw err;
   }
 };
-export default connectDb
+
+export default connectDb;

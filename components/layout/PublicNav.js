@@ -39,7 +39,7 @@ export default function PublicNav() {
             aria-label={`Cart${roomCart.length ? `, ${roomCart.length} items` : ""}`}
             className="relative flex items-center justify-center rounded-full px-3 py-2 text-white transition hover:bg-white/15"
           >
-            {roomCart.length > 0 && (
+            {roomCart.length > 0 && user &&(
               <span className="absolute -right-1 -top-1 rounded-full bg-amber-500 px-1.5 py-0.5 text-xs text-white">
                 {roomCart.length}
               </span>

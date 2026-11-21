@@ -118,12 +118,8 @@ export default function AdminDashboard() {
 
   if (loading) {
     return (
-      <div
-        className="flex min-h-[60vh] items-center justify-center"
-        role="status"
-        aria-label="Loading dashboard"
-      >
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-700" />
+      <div className="h-screen flex justify-center items-center">
+        <div className="w-14 h-14 border-2 border-amber-600 border-t-transparent animate-spin rounded-full"></div>
       </div>
     );
   }

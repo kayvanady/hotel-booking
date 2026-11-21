@@ -24,15 +24,7 @@ export default function CommentsSlider() {
 
   const comments = data?.comments || [];
 
-  if (isError) {
-    return <p className="py-10 text-center">Failed to load comments.</p>;
-  }
-
-  if (comments.length === 0) {
-    return null;
-  }
-
-    if (isLoading) {
+  if (isLoading) {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {Array.from({ length: 4 }).map((_, index) => (
@@ -44,6 +36,15 @@ export default function CommentsSlider() {
       </div>
     );
   }
+
+  if (isError) {
+    return <p className="py-10 text-center">Failed to load comments.</p>;
+  }
+
+  if (comments.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
