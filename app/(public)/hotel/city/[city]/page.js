@@ -7,24 +7,30 @@ export default async function HotelPage({ params }) {
 
   await connectDb();
 
-  const hotels = await Hotel.find({ "address.city": city }).lean();
+  const cityName = decodeURIComponent(city).trim();
+
+  const hotels = await Hotel.find({
+    "address.city": {
+      $regex: `^${cityName}$`,
+      $options: "i",
+    },
+  }).lean();
 
   return (
     <>
       <main className="min-h-screen bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 px-4 py-10 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">
-         
           <div className="mb-10">
             <p className="mb-2 text-sm font-medium uppercase tracking-[0.2em] text-amber-600">
               LuxeStay
             </p>
 
             <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Hotels in {city}
+              Hotels in {cityName}
             </h1>
 
             <p className="mt-2 text-slate-500">
-              Discover comfortable places to stay in {city}.
+              Discover comfortable places to stay in {cityName}.
             </p>
 
             <div className="mt-5 h-px w-full bg-slate-200" />

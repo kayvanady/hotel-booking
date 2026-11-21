@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Header() {
   const cities = [
-    { name: "Tehran", href: "/hotel/city/Tehran" },
-    { name: "Shiraz", href: "/hotel/city/Shiraz" },
-    { name: "New York", href: "/hotel/city/New York" },
-    { name: "Hamburg", href: "/hotel/city/Hamburg" },
-    { name: "Barcelona", href: "/hotel/city/Barcelona" },
+    { name: "Tehran", href: "Tehran" },
+    { name: "Shiraz", href: "Shiraz" },
+    { name: "New York", href: "New York" },
+    { name: "Hamburg", href: "Hamburg" },
+    { name: "Barcelona", href: "Barcelona" },
   ];
   return (
     <header className="bg-[url('/images/slider.jpg')] bg-cover bg-no-repeat min-h-150 bg-center w-full   z-1 relative">
@@ -35,7 +35,7 @@ export default function Header() {
           {cities.map((city, index) => (
             <Link
               key={index}
-              href={`${encodeURIComponent(city.href)}`}
+              href={`/hotel/city/${encodeURIComponent(city.href)}`}
               className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:bg-white hover:text-gray-900"
             >
               {city.name}
