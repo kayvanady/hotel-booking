@@ -50,7 +50,7 @@ export default function LoginPage() {
       if (data?.user?.role === "admin") {
         router.push("/admin/dashboard");
       } else {
-        router.push("/user/profile");
+        router.push("/");
       }
     },
     onError: (err) => {

@@ -48,12 +48,6 @@ export default function CommentsSlider() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold">What Our Customers Say</h2>
-
-          <p className="mt-3 text-gray-500">Real experiences from our users</p>
-        </div>
-
         <Swiper
           modules={[Pagination, FreeMode]}
           spaceBetween={20}

@@ -5,7 +5,7 @@ export default function Header() {
   const cities = [
     { name: "Tehran", href: "/hotel/city/Tehran" },
     { name: "Shiraz", href: "/hotel/city/Shiraz" },
-    { name: "Newyork", href: "/hotel/city/Newyork" },
+    { name: "New York", href: "/hotel/city/New York" },
     { name: "Hamburg", href: "/hotel/city/Hamburg" },
     { name: "Barcelona", href: "/hotel/city/Barcelona" },
   ];
@@ -35,7 +35,7 @@ export default function Header() {
           {cities.map((city, index) => (
             <Link
               key={index}
-              href={`${city.href}`}
+              href={`${encodeURIComponent(city.href)}`}
               className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:bg-white hover:text-gray-900"
             >
               {city.name}
