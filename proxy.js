@@ -62,7 +62,7 @@ export function proxy(req) {
       );
     }
 
-    /
+    
     if (
       pathname.startsWith("/user") &&
       payload.role !== "user"
